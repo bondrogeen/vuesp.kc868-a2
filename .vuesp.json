@@ -1,0 +1,29 @@
+{
+  "$schema": "https://vuesp.ru/schema/vuesp-project.json",
+  "name": "vuesp.kc868-a2",
+  "summary": "KinCony KC868-A2 V2.3 controller with 2 relays, 2 opto inputs, 2 OneWire terminals, Ethernet, RS485 Modbus and a GSM socket.",
+  "description": "## Vuesp KC868-A2\n\nFirmware 5.0.0 for the KinCony KC868-A2 V2.3. Two relays and two opto-isolated inputs are connected directly to ESP32 GPIO, two independent 1-Wire terminals support DS18B20 sensors, and Ethernet LAN8720A / Wi-Fi plus RS485 Modbus RTU are supported. The SIM800L/SIM7600 socket is documented but not implemented yet.\n\nThe project is based on Vuesp 5.x, uses ConfigStore, diagnostics, the current web UI and the Modbus page.",
+  "platforms": [
+    "ESP32"
+  ],
+  "tags": [
+    "kc868",
+    "kincony",
+    "relay",
+    "io",
+    "ethernet",
+    "modbus",
+    "rs485",
+    "1wire",
+    "ds18b20",
+    "gsm",
+    "esp32"
+  ],
+  "createdWith": "vuesp-create@1.0.1",
+  "createdAt": "2026-11-24T20:00:00+03:00",
+  "template": {
+    "source": "local",
+    "ref": "local",
+    "commit": "facff01c438a00248fd5c4c5f5a9cc4388f98f71"
+  }
+}

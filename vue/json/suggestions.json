@@ -1,0 +1,50 @@
+[
+  {
+    "label": "input",
+    "type": "func",
+    "insert": "input(${0})",
+    "detail": "input(pin:number) => value:number",
+    "description": "Read a raw opto input state (pin 1–2). 0 means active because the input is active-low."
+  },
+  {
+    "label": "output",
+    "type": "func",
+    "insert": "output(${0}, ${1})",
+    "detail": "output(pin:number, value?:number) => value:number",
+    "description": "Read or write a relay (pin 1–2). 1 turns the relay on, 0 turns it off."
+  },
+  {
+    "label": "var",
+    "type": "func",
+    "insert": "var('${0}')",
+    "detail": "var(id:string) => value:number | string<br>var(id:string, value:number | string) => ok:number",
+    "description": "Read or write a Modbus variable. Writing updates the value and, for master/local sources, the point."
+  },
+  {
+    "label": "modbus",
+    "type": "func",
+    "insert": "modbus('${0}', '${1}')",
+    "detail": "modbus(device:string | number, point:string | number) => value:number<br>modbus(device:string | number, point:string | number, value:number | string) => ok:number",
+    "description": "Read or write a Modbus profile point directly. Device and point accept an ID or a numeric Modbus address; use the ID when addresses repeat."
+  },
+  {
+    "label": "port_c",
+    "type": "event",
+    "detail": "click on IN1–IN2<br>$e0=input index:number (0–1)<br>$e1=raw value:number<br>$e2=count:number"
+  },
+  {
+    "label": "port_l",
+    "type": "event",
+    "detail": "long press on IN1–IN2<br>$e0=input index:number (0–1)<br>$e1=raw value:number"
+  },
+  {
+    "label": "port_r",
+    "type": "event",
+    "detail": "repeat while held on IN1–IN2<br>$e0=input index:number (0–1)<br>$e1=raw value:number"
+  },
+  {
+    "label": "modbus",
+    "type": "event",
+    "detail": "a Modbus master variable changed<br>read it with var(id:string)"
+  }
+]

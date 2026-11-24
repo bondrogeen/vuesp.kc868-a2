@@ -1,0 +1,80 @@
+[
+  {
+    "id": "device.input.1",
+    "name": "input.1",
+    "type": "button",
+    "icon": "light",
+    "opts": {
+      "disabled": 1
+    },
+    "args": [
+      "device.input"
+    ],
+    "get": "(a & 1 ? 0 : 1)",
+    "getTo": "v ? 'ON' : 'OFF'"
+  },
+  {
+    "id": "device.input.2",
+    "name": "input.2",
+    "type": "button",
+    "icon": "light",
+    "opts": {
+      "disabled": 1
+    },
+    "args": [
+      "device.input"
+    ],
+    "get": "(a & 2 ? 0 : 1)",
+    "getTo": "v ? 'ON' : 'OFF'"
+  },
+  {
+    "id": "device.output.1",
+    "name": "output.1",
+    "type": "button",
+    "icon": "bulb",
+    "args": [
+      "device.output",
+      "device"
+    ],
+    "get": "(a & 1 ? 1 : 0)",
+    "getTo": "v ? 'ON' : 'OFF'",
+    "set": "({...b, output: v ? (b.output | 1) : (b.output & ~1), command: CMD.SET})"
+  },
+  {
+    "id": "device.output.2",
+    "name": "output.2",
+    "type": "button",
+    "icon": "bulb",
+    "args": [
+      "device.output",
+      "device"
+    ],
+    "get": "(a & 2 ? 1 : 0)",
+    "getTo": "v ? 'ON' : 'OFF'",
+    "set": "({...b, output: v ? (b.output | 2) : (b.output & ~2), command: CMD.SET})"
+  },
+  {
+    "id": "info.ethernet",
+    "name": "ethernet",
+    "type": "info",
+    "icon": "plug",
+    "args": [
+      "info.ethernet",
+      "info.ethIp",
+      "info"
+    ],
+    "getTo": "v ? b.join('.') : 'DOWN'"
+  },
+  {
+    "id": "modbus.status",
+    "name": "modbus",
+    "type": "info",
+    "icon": "link",
+    "args": [
+      "modbus.role",
+      "modbus.lastError",
+      "modbus"
+    ],
+    "getTo": "v ? (v === 2 ? 'MASTER' : 'SLAVE') : 'OFF'"
+  }
+]
