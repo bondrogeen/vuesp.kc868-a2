@@ -193,13 +193,12 @@ TEPP1/GPIO33 и TEPP2/GPIO14 — две независимые шины. На к
 | Команда | Действие |
 | --- | --- |
 | `VUESP:PING` | проверить связь (`@VUESP:PONG`) |
-| `VUESP:INFO` | IP Wi-Fi STA и AP (`0.0.0.0,192.168.4.1`) |
+| `VUESP:INFO` | `@VUESP:INFO:<имя>,<плата>,<id>,<ip STA>,<ip AP>` |
 | `VUESP:SCAN` | список Wi-Fi сетей |
 | `VUESP:SET<TAB>ssid<TAB>pass` | подключить Wi-Fi STA и перезагрузить |
 | `VUESP:ETH` | link/скорость/текущий IP Ethernet |
 | `VUESP:ETHSET<TAB>ip<TAB>gateway<TAB>mask` | задать статический Ethernet и перезагрузить |
 | `VUESP:ETHDHCP` | вернуть Ethernet на DHCP |
-| `VUESP:IO` | маски входов/выходов |
 | `VUESP:OUT<TAB>n<TAB>0/1` | включить/выключить реле n (1–2) |
 
 После `VUESP:ETHSET` или `VUESP:ETHDHCP` устройство перезагружается.
